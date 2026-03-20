@@ -4,12 +4,8 @@ using Microsoft.Extensions.Configuration;
 
 namespace Tomlyn.Extensions.Configuration
 {
-    public class TomlConfigurationProvider : FileConfigurationProvider
+    public class TomlConfigurationProvider(FileConfigurationSource source) : FileConfigurationProvider(source)
     {
-        public TomlConfigurationProvider(FileConfigurationSource source) : base(source)
-        {
-        }
-
         public override void Load(Stream stream)
         {
             try

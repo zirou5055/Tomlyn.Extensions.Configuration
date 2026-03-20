@@ -45,12 +45,12 @@ public class TomlToSnakeCaseModifierTest
             DatabaseInformation = new DatabaseInformation
             {
                 IsEnabled = true,
-                Ports = new ushort[] { 8000, 8001, 8002 },
-                DataValues = new List<List<object>>
-                {
-                    new List<object> { "delta", "phi" },
-                    new List<object> { 3.14 }
-                },
+                Ports = [8000, 8001, 8002],
+                DataValues =
+                [
+                    ["delta", "phi"],
+                    [3.14]
+                ],
                 TempTargets = new Dictionary<string, decimal>
                 {
                     ["cpu"] = 79.5m,

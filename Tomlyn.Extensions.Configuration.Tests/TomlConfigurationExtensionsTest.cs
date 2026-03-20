@@ -26,7 +26,7 @@ public class TomlConfigurationExtensionsTest
             Database = new Database
             {
                 Enabled = true,
-                Ports = new ushort[] { 8000, 8001, 8002 },
+                Ports = [8000, 8001, 8002],
                 Temp_Targets = new Dictionary<string, decimal>
                 {
                     ["cpu"] = 79.5m,

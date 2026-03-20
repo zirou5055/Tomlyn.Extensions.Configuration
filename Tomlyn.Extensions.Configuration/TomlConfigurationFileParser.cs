@@ -11,17 +11,17 @@ namespace Tomlyn.Extensions.Configuration
     {
         private TomlConfigurationFileParser() { }
 
-        private readonly IDictionary<string, string> _data = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, string> _data = new(StringComparer.OrdinalIgnoreCase);
         private readonly Stack<string> _paths = new();
 
         public static IDictionary<string, string> Parse(Stream input)
             => new TomlConfigurationFileParser().ParseStream(input);
 
-        private IDictionary<string, string> ParseStream(Stream input)
+        private Dictionary<string, string> ParseStream(Stream input)
         {
             using var reader = new StreamReader(input);
-            var doc = Toml.Parse(reader.ReadToEnd());
-            VisitObject(doc.ToModel());
+            var doc = TomlSerializer.Deserialize<TomlTable>(reader.ReadToEnd());
+            VisitObject(doc);
             return _data;
         }
 

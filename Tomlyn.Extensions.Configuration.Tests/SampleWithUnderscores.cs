@@ -8,7 +8,7 @@ public class SampleWithUnderscores
     public string Title { get; init; } = "";
     public OwnerOfToml OwnerOfToml { get; init; } = new();
     public DatabaseInformation DatabaseInformation { get; init; } = new();
-    public Dictionary<string, Servers> Servers { get; init; } = new();
+    public Dictionary<string, Servers> Servers { get; init; } = [];
 
 }
 
@@ -21,10 +21,10 @@ public class OwnerOfToml
 public class DatabaseInformation
 {
     public bool IsEnabled { get; init; }
-    public ushort[] Ports { get; init; } = Array.Empty<ushort>();
-    public List<List<object>> DataValues { get; init; } = new();
+    public ushort[] Ports { get; init; } = [];
+    public List<List<object>> DataValues { get; init; } = [];
 
-    public Dictionary<string, decimal> TempTargets { get; init; } = new();
+    public Dictionary<string, decimal> TempTargets { get; init; } = [];
 }
 
 public class Servers

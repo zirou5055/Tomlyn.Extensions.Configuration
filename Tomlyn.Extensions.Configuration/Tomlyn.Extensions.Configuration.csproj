@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;net8.0;net9.0;net10.0</TargetFrameworks>
         <Description>TomlConfigurationProvider using Tomlyn</Description>
-        <RepositoryUrl>https://github.com/bugproof/Tomlyn.Extensions.Configuration</RepositoryUrl>
+        <RepositoryUrl>https://github.com/zirou5055/Tomlyn.Extensions.Configuration</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageVersion>2.0.0</PackageVersion>
         <PackageTags>toml;configuration</PackageTags>
@@ -11,6 +11,8 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <LangVersion>default</LangVersion>
+        <PackageId>Zirou.Tomlyn.Extensions.Configuration</PackageId>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,6 +21,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Include="..\README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
       <None Include="img\Tomlyn.png" Pack="true" PackagePath="\" />
     </ItemGroup>
 
